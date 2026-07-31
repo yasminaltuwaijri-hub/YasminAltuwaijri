@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme — "fresh sky" */
+  --bg: 240 247 253;
+  --surface: 224 238 250;
+  --ink: 21 33 51;
+  --soft: 79 98 122;
+  --blue: 37 110 227;
+  --coral: 224 92 108;
+  --mint: 39 156 140;
+  --line: 205 224 240;
+}
+
+.dark {
+  /* Dark theme — "deep sky" */
+  --bg: 13 20 33;
+  --surface: 20 30 46;
+  --ink: 229 238 249;
+  --soft: 148 168 191;
+  --blue: 92 155 245;
+  --coral: 235 128 141;
+  --mint: 84 190 172;
+  --line: 39 54 76;
+}
+
+* {
+  border-color: rgb(var(--line));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--ink));
+}
+
+::selection {
+  background-color: rgb(var(--blue) / 0.35);
+  color: rgb(var(--ink));
+}
+
+/* Visible, intentional focus ring — never removed */
+:focus-visible {
+  outline: 2px solid rgb(var(--blue));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: rgb(var(--blue));
+  color: rgb(var(--bg));
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hairline {
+  height: 1px;
+  background: rgb(var(--line));
+}
+
+/* Hide the native cursor while our custom cursor dot is running (desktop,
+   fine-pointer devices only — see CustomCursor.tsx). Links/buttons keep
+   their own cursor removed too, so the native arrow never flashes back in. */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
