@@ -89,7 +89,7 @@ export default function Hero() {
             href="#achievements"
             className="rounded-full bg-ink px-6 py-3 font-body text-sm font-medium text-bg transition-transform duration-300 ease-signature hover:scale-[1.03] hover:bg-coral"
           >
-            See what I've done
+            See what I&apos;ve done
           </a>
           <a
             href="#contact"

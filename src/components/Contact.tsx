@@ -23,7 +23,7 @@ export default function Contact() {
         </motion.h2>
 
         <p className="mt-6 max-w-prose text-base leading-relaxed text-soft sm:text-lg">
-          Whether that's an internship, a collaboration, or just a good
+          Whether that&apos;s an internship, a collaboration, or just a good
           conversation about an idea — reach out.
         </p>
 
